@@ -1,0 +1,21 @@
+# Book PDF — keep locally; do not publish (O'Reilly copyright).
+# For a private repo only, delete this line if you accept the license risk.
+*.pdf
+
+# Temp files from PDF extraction / experiments
+_ch*.txt
+_p*.txt
+*.tmp
+
+# Secrets
+.env
+.env.*
+*.pem
+id_*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
