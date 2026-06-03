@@ -23,7 +23,7 @@ Update this table as you complete chapters:
 
 | Ch | Title | Done | Date | Notes |
 |----|-------|:----:|------|-------|
-| 1 | Introduction to Agents | ☐ | | |
+| 1 | Introduction to Agents | 🔄 | 2026-05-27 | [notes/ch-01-intro.md](./notes/ch-01-intro.md) |
 | 2 | Designing Agent Systems | ☐ | | |
 | 3 | UX for Agents | ☐ | | |
 | 4 | Tools (incl. MCP) | ☐ | | |
