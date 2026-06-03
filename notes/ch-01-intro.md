@@ -128,14 +128,20 @@ Explain in 5 simple bullets for a Jenkins/ops engineer.
 Then list files in this folder and suggest one sentence I should add to notes/ch-01-intro.md.
 ```
 
-### Lab 2 — Draw your agentic system (5 min, paper or markdown)
+### Lab 2 — Draw your agentic system ✅
 
-Fill in:
+See full design: **[lab-02-agent-design.md](./lab-02-agent-design.md)**
 
-- **Goal:** e.g. “Triage failed non-prod Jenkins builds”  
-- **Brain:** Cursor + model  
-- **Tools:** Jenkins MCP, SSH MCP, shell  
-- **Guardrails:** no prod without human approval  
+Quick summary:
+
+| Piece | Your design |
+|-------|-------------|
+| **Goal** | Triage failed **non-prod** Jenkins builds; summarize cause + suggest next steps |
+| **Brain** | Cursor Agent + Composer (you prompt, you approve) |
+| **Tools** | `jenkins` MCP, `jenkins-dr` (read-only triage), `ssh-ilceusc097` MCP, local shell |
+| **Memory** | Chat, `@` rules in `MCP demo`, `PROMPTS.md`, this repo |
+| **Orchestration** | You or agent: job status → console tail → (optional) SSH check → summary |
+| **Guardrails** | No `jenkins-prod` for auto-triage; no build triggers / bounces without explicit ask; human runs prod |
 
 ### Lab 3 — MCP preview (after Labs 1–2)
 
@@ -183,6 +189,6 @@ When does a failed-build triage cross the line from “good prompt + MCP” to n
 
 - [ ] Read Chapter 1 in PDF  
 - [x] Lab 1 in Cursor  
-- [ ] Lab 2 filled in  
+- [x] Lab 2 filled in — [lab-02-agent-design.md](./lab-02-agent-design.md)  
 - [ ] Lab 3 (MCP demo)  
 - [ ] `git add notes/ch-01-intro.md` → commit → push  
