@@ -145,11 +145,11 @@ Quick summary:
 
 ### Lab 3 — MCP preview (after Labs 1–2)
 
-Open `../MCP demo` → Agent:
+**Study notes (this repo):** [lab-03-mcp-jenkins.md](./lab-03-mcp-jenkins.md)  
+**Hands-on in:** `../MCP demo` — `LAB3-NOTES.md`, `PROMPTS.md`
 
-```text
-Non-prod only: list Jenkins jobs and explain which MCP tools you used. Do not change anything.
-```
+1. Restart Cursor → **Settings → Tools & MCP** → `jenkins` **green**  
+2. Open **MCP demo** → Agent → prompt from [lab-03-mcp-jenkins.md](./lab-03-mcp-jenkins.md) or `MCP demo/PROMPTS.md`
 
 ---
 
@@ -190,5 +190,5 @@ When does a failed-build triage cross the line from “good prompt + MCP” to n
 - [ ] Read Chapter 1 in PDF  
 - [x] Lab 1 in Cursor  
 - [x] Lab 2 filled in — [lab-02-agent-design.md](./lab-02-agent-design.md)  
-- [ ] Lab 3 (MCP demo)  
+- [ ] Lab 3 (MCP demo) — [lab-03-mcp-jenkins.md](./lab-03-mcp-jenkins.md)  
 - [ ] `git add notes/ch-01-intro.md` → commit → push  
