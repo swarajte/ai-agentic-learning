@@ -200,30 +200,144 @@ Full prompts also in: `..\MCP demo\PROMPTS.md`
 
 ## Lab 3 checklist (tick after restart)
 
-- [ ] Restarted Cursor (or MCP: Reload Servers)
-- [ ] **Tools & MCP** shows `jenkins` (and optionally `jenkins-dr`, `ssh-ilceusc097`)
-- [ ] `jenkins` is **green**
-- [ ] VPN on if needed
-- [ ] Ran Lab 3 prompt in **MCP demo** Agent chat
-- [ ] Got job list + MCP tools named + non-prod URL
-- [ ] Updated **My results** below
-- [ ] `git commit` this file to study repo
+- [x] Restarted Cursor (or MCP: Reload Servers)
+- [x] **Tools & MCP** shows `jenkins`, `jenkins-dr`, `jenkins-prod`, `ssh-ilceusc097`, `SSH_to_Remote_Server_2_0_0`
+- [x] `jenkins` is **green** (38 tools enabled)
+- [x] Ran Lab 3 prompt in **MCP demo** Agent chat
+- [x] Got job list + MCP tools named + non-prod URL
+- [x] Updated **My results** below
+- [x] `git commit` this file to study repo (pending your push)
 
 ---
 
-## My results (fill after test)
+## My results — Lab 3 PASS (2026-05-27)
 
-**Date:**
+**Summary:** Jenkins MCP connected. **62 jobs** listed on non-prod. Tools documented. Last-build **color/status** needs `jenkins_get_job_status` per job (one MCP call each).
 
-**MCP servers green in UI:**
+### MCP tools used
 
-**Agent listed jobs?** yes / no
+| # | MCP server | Tool | Purpose |
+|---|------------|------|---------|
+| 1 | `jenkins` | `jenkins_list_instances` | Confirm Jenkins URL |
+| 2 | `jenkins` | `jenkins_list_jobs` | List all job names (62 jobs) |
+| 3 | `jenkins` | `jenkins_get_job_status` | Last build result (sample jobs only) |
+| 4 | `jenkins` | `jenkins_list_views` | Views + jobs (no color in response) |
 
-**MCP tools agent said it used:**
+**Not used:** `jenkins-prod`, `jenkins-dr`, SSH tools, `jenkins_trigger_build`, config/write tools.
 
-**Jenkins URL confirmed:**
+### Environment mapping
 
-**Notes / errors:**
+| Item | Value |
+|------|--------|
+| MCP server | `jenkins` |
+| Jenkins URL | `http://10.100.145.98:8080` |
+| Environment | Non-prod (`mwhlvuscdoc301`) |
+| Hostname in job URLs | `http://mwhlvuscdoc301:8080/...` (same instance) |
+
+**Note:** `jenkins_list_jobs` returns name + URL only, not ball color. Status = `jenkins_get_job_status` (one call per job).
+
+### Sample build status (this run)
+
+| Job | Last build | Result | Ball |
+|-----|------------|--------|------|
+| AME_BOUNCE | #12 | SUCCESS | Blue |
+| AEM_CONTENT_DEPLOYMENT | #5 | SUCCESS | Blue |
+
+Additional status calls were skipped in UI; other jobs have no status in this run.
+
+### Ops-relevant jobs (from workspace notes)
+
+`AME_BOUNCE`, `AME_SSH_TEST`, `DXPPTE_RPEAR_SYNC`, `J-Boot`, `DeploySSOHF`, `DIGITAL_CREATE_AEM_HOTFIX`, `DIGITAL_INSTALL_SSO_PACKAGE`
+
+### Jenkins views (3)
+
+| View | Jobs |
+|------|------|
+| `all` | 62 |
+| Digital Automations | 21 |
+| Digital Checklist | 11 |
+
+### Full job list (62) — non-prod
+
+<details>
+<summary>Click to expand all job names</summary>
+
+1. AEM_CONTENT_DEPLOYMENT  
+2. AME_BOUNCE  
+3. AME_SSH_TEST  
+4. CB-Operations  
+5. Change_Logical_date  
+6. Couchbase_Cache_clean_job  
+7. demo  
+8. DeployDPHF  
+9. DeploySSOHF  
+10. DIGITAL_AEM_PACKAGES_FROM_HF_ORDER_CHECKER  
+11. DIGITAL_AEM_ZIPS_HF_ORDER_CHECKER  
+12. DIGITAL_CHECK_BACKUP_LOGS  
+13. DIGITAL_CHECK_PRODUCTS_POST_EPC  
+14. DIGITAL_CHECKLIST  
+15. DIGITAL_CHECKLIST_AEM_PACKAGES_ORDER_CHECKER  
+16. DIGITAL_CHECKLIST_AEM_VERSION_CHECKER  
+17. DIGITAL_CHECKLIST_AEM_ZIPS_CHECKER  
+18. DIGITAL_CHECKLIST_BV_INCOMING_CHECKER  
+19. DIGITAL_CHECKLIST_COUCHBASE_CHECKER  
+20. DIGITAL_CHECKLIST_FEEDS_CHECKER  
+21. DIGITAL_CHECKLIST_MOBILE_APP_CHECKER  
+22. DIGITAL_CHECKLIST_SOLR_CHECKER  
+23. DIGITAL_CHECKLIST_STOCK_CHECKER  
+24. DIGITAL_CHECKLIST_UXF_CHECKER  
+25. DIGITAL_CLEAN_FILESYSTEM  
+26. DIGITAL_CLEAN_OLD_JENKINS_CONTENT  
+27. DIGITAL_CONTENT_SYNC  
+28. DIGITAL_CREATE_AEM_HOTFIX  
+29. DIGITAL_DAILY_HF_DOWNLOAD_PACKAGES  
+30. DIGITAL_DAILY_HF_DOWNLOAD_PACKAGES_MULTIPLE_ENV  
+31. DIGITAL_DEPLOY_AEM_CATALOG  
+32. DIGITAL_EXPORT_CONTENT  
+33. DIGITAL_INSTALL_LATEST_CONTENT  
+34. DIGITAL_INSTALL_LATEST_CONTENT_PTE  
+35. DIGITAL_INSTALL_SSO_PACKAGE  
+36. DIGITAL_LIST_AEM_PACKAGES_FROM_HF  
+37. DIGITAL_TRIGGER_PREPAID_BACKUP  
+38. DIGITAL_UPDATE_INVENTORY  
+39. DIGITAL_UPDATE_INVENTORY_AEM  
+40. DIGITAL_UPDATE_INVENTORY_NOV  
+41. DR_AEM_UPDATE_MAPPING_URL_FOR_CONTENT_PAGES  
+42. DR_Enable_Disable_Splash_Page  
+43. DXP_Ping_Switch  
+44. DXPPTE_RPEAR_SYNC  
+45. Enable_Disable_Splash_Page  
+46. FS_Monitor  
+47. inventory-notification-request_rest  
+48. J-Boot  
+49. J-Boot_Testing  
+50. NON_PROD_AEM_UPDATE_MAPPING_URL_AND_DISP_CLEANUP  
+51. NON_PROD_DEVICE_LIST_CHECK  
+52. Pipeline J-Boot_BKP  
+53. PROD_AEM_UPDATE_MAPPING_URL_FOR_CONTENT_PAGES  
+54. Promotion_details_rest  
+55. PTE_AEM_UPDATE_MAPPING_URL_FOR_CONTENT_PAGES  
+56. PTE_DISP_CACHE_CLEAN  
+57. PTE_Enable_Disable_Splash_Page  
+58. SIT_AEM_UPDATE_MAPPING_URL_FOR_CONTENT_PAGES  
+59. Solr_Indexing_Couchbase_Cache_Clean_PTE  
+60. SolrIndexing  
+61. WARMUP_PTE_NONPROD  
+
+</details>
+
+### Lab 3+ prompt — full status for all jobs
+
+```text
+Non-prod only. Use jenkins MCP. For each job from jenkins_list_jobs, call jenkins_get_job_status and return a table: job name, last build #, result, and Jenkins ball color (blue/red/yellow/grey). Do not trigger builds or change anything.
+```
+
+When Cursor asks to approve MCP tools, **Allow** (or auto-approve `jenkins_get_job_status`) so all 62 status calls can run.
+
+### Notes
+
+- **Lab 3 pass:** MCP connected, correct non-prod URL, 62 jobs listed, tools documented.  
+- For a **complete status column**, re-run with approvals for `jenkins_get_job_status`.
 
 ---
 

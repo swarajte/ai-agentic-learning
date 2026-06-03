@@ -19,7 +19,7 @@
 
 | Done | Ch | Topic | Cursor lab (copy into Agent) |
 |:----:|---|-------|------------------------------|
-| 🔄 | 1 | Introduction to Agents | See [notes/ch-01-intro.md](./notes/ch-01-intro.md) — Labs 1–3 |
+| ✅ | 1 | Introduction to Agents | [ch-01](./notes/ch-01-intro.md) · Labs 1–3 done · [Lab 3 results](./notes/lab-03-mcp-jenkins.md#my-results--lab-3-pass-2026-05-27) |
 | ☐ | 2 | Designing Agent Systems | `From @BOOK_STUDY_PLAN.md and this project, sketch goal / tools / guardrails for a "failed build triage" agent.` |
 | ☐ | 3 | Skills | Open `MCP demo`. `List MCP tools (Jenkins + SSH). Call one: list non-prod Jenkins jobs OR run hostname via SSH.` |
 | ☐ | 4 | Orchestration | In `MCP demo`: `Last failed job on non-prod → last 40 console lines → 3-bullet summary → suggested fix.` |

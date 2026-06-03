@@ -187,8 +187,8 @@ When does a failed-build triage cross the line from “good prompt + MCP” to n
 
 ## Done?
 
-- [ ] Read Chapter 1 in PDF  
+- [ ] Read Chapter 1 in PDF (optional if labs done)  
 - [x] Lab 1 in Cursor  
 - [x] Lab 2 filled in — [lab-02-agent-design.md](./lab-02-agent-design.md)  
-- [ ] Lab 3 (MCP demo) — [lab-03-mcp-jenkins.md](./lab-03-mcp-jenkins.md)  
-- [ ] `git add notes/ch-01-intro.md` → commit → push  
+- [x] Lab 3 (MCP demo) — [lab-03-mcp-jenkins.md](./lab-03-mcp-jenkins.md)  
+- [ ] `git add notes/` → commit → push (when output pasted)  
